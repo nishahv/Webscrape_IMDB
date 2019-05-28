@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 from csv import writer
 import re
 
-start=time.time()
 base_url="https://www.imdb.com/search/title?groups=top_250&sort=user_rating"
 with open('movies.csv','w') as csv_file:
     csv_writer=writer(csv_file)
@@ -60,9 +59,6 @@ with open('movies.csv','w') as csv_file:
             info_imdb=[movie_name,release_year,certificate,runtime,genre,rating,description,directors,stars]
             #print(info_imdb)
             csv_writer.writerow(info_imdb)
-
-end=time.time()
-print(end-start)
 
 
 
